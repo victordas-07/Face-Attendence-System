@@ -1,0 +1,21 @@
+{
+  "name": "face-attendance",
+  "version": "1.0.0",
+  "main": "expo-router/entry",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo run:android",
+    "ios": "expo run:ios"
+  },
+  "dependencies": {
+    "expo": "^51.0.0",
+    "expo-camera": "~15.0.0",
+    "expo-router": "^3.4.9",
+    "react": "18.3.1",
+    "react-native": "0.76.0",
+    "@tensorflow/tfjs": "4.20.0",
+    "@tensorflow/tfjs-react-native": "0.12.0",
+    "@react-native-async-storage/async-storage": "1.21.0",
+    "firebase": "10.8.0"
+  }
+}
