@@ -2,12 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Platform } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-
 import HomeScreen from "./screens/HomeScreen";
 import RegisterFaceScreen from "./screens/RegisterFaceScreen";
 import CameraRecognitionScreen from "./screens/CameraRecognitionScreen";
 import AttendanceScreen from "./screens/AttendanceScreen";
-import WebCameraRecognitionScreen from "./screens/WebCameraRecognitionScreen";
+
 
 const Stack = createStackNavigator();
 
