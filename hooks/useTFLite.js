@@ -1,7 +1,7 @@
 // hooks/useTFLite.js
 import { useEffect, useState } from "react";
 import { Platform } from "react-native";
-import Tflite from "tflite-react-native";
+import Tflite from "react-native-tflite";
 import { Asset } from "expo-asset";
 
 export default function useTFLite() {
@@ -14,9 +14,9 @@ export default function useTFLite() {
     (async () => {
       const tfliteInstance = new Tflite();
 
-      const faceDetAsset = Asset.fromModule(require("../models/face_detection.tflite"));
-      const recogAsset = Asset.fromModule(require("../models/face_recognition.tflite"));
-      const spoofAsset = Asset.fromModule(require("../models/anti_spoofing.tflite"));
+      const faceDetAsset = Asset.fromModule(require("../assets/models/face_detection.tflite"));
+      const recogAsset = Asset.fromModule(require("../assets/models/face_recognition.tflite"));
+      const spoofAsset = Asset.fromModule(require("../assets/models/anti_spoofing.tflite"));
 
       await faceDetAsset.downloadAsync();
       await recogAsset.downloadAsync();
