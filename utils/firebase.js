@@ -12,12 +12,12 @@ import {
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "your-app.firebaseapp.com",
-  projectId: "your-app",
-  storageBucket: "your-app.appspot.com",
-  messagingSenderId: "000000000000",
-  appId: "1:000000000000:web:xxxxxxxxxxxx"
+  apiKey: "AIzaSyCeT3bG0BHqkFnxvOArUbLXaVqwsRhATuM",
+  authDomain: "face-attendance-system-f6853.firebaseapp.com",
+  projectId: "face-attendance-system-f6853",
+  storageBucket: "face-attendance-system-f6853.firebasestorage.app",
+  messagingSenderId: "550987266598",
+  appId: "1:550987266598:android:65eccae7e2cefbe4c904e7"
 };
 
 const app = initializeApp(firebaseConfig);

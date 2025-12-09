@@ -23,7 +23,6 @@
     },
     "android": {
       "package": "com.victordas.faceattendance",
-      "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"

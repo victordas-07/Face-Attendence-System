@@ -1,0 +1,309 @@
+Here is a **clean “Installation Requirements” section** that you can add to your README.
+
+If you want, I can **merge it into the README automatically** or create a **canvas file**.
+
+---
+
+# ✅ **Installation Requirements (Add to README)**
+
+````md
+## ✅ Installation Requirements
+
+Before running the Face Attendance System, ensure your system meets these requirements:
+
+---
+
+### 🖥️ **System Requirements**
+
+| Component | Minimum Requirement |
+|----------|----------------------|
+| OS | Windows / macOS / Linux |
+| RAM | 4GB+ (8GB recommended) |
+| Node.js | v18 or later |
+| npm | v9 or later |
+| Expo CLI | Latest |
+| Android Studio (optional) | For emulator builds |
+| JDK | JDK 17 (if using prebuild/EAS Android) |
+
+---
+
+### 📦 **Required Global Tools**
+
+Install Node.js (if not installed):  
+https://nodejs.org/
+
+Install Expo CLI:
+
+```sh
+npm install -g expo-cli
+````
+
+Install EAS CLI:
+
+```sh
+npm install -g eas-cli
+```
+
+---
+
+### 📱 **Expo Modules Used**
+
+Install all required dependencies:
+
+```sh
+npm install expo-camera
+npm install expo-face-detector
+npm install expo-permissions
+npm install expo-file-system
+npm install expo-constants
+```
+
+Or install all at once:
+
+```sh
+npm install expo-camera expo-face-detector expo-permissions expo-file-system expo-constants
+```
+
+---
+
+### ⚙️ **Project Dependencies**
+
+Install project packages:
+
+```sh
+npm install
+```
+
+If you have errors:
+
+```sh
+npm install --legacy-peer-deps
+```
+
+---
+
+### 🔧 **Android Build Requirements**
+
+If you want to use **EAS Build or local Android build**:
+
+Install:
+
+* **Android Studio**
+* **Android SDK 34+**
+* **Platform Tools (ADB)**
+* **JDK 17**
+
+Set environment variables (Windows):
+
+```sh
+setx JAVA_HOME "C:\Program Files\Java\jdk-17"
+setx ANDROID_HOME "%LOCALAPPDATA%\Android\Sdk"
+```
+
+---
+
+### 📷 **Permissions Required**
+
+The app needs:
+
+```md
+Camera Access  
+File System Access (for logs)  
+Internet Access (for syncing)
+```
+
+Expo auto-handles permissions.
+
+---
+
+### 🧹 Optional Cleanup
+
+If prebuild breaks:
+
+```sh
+npx expo prebuild --clean
+```
+
+If EAS build issues:
+
+```sh
+eas clean --all
+```
+
+---
+
+Here is a **clean and complete "Installation Requirements for TensorFlow + Expo"** section you can add directly to your README.
+
+If you want, I can insert it into a canvas README file.
+
+---
+
+# ✅ **TensorFlow + Expo Installation Requirements**
+
+Use this ONLY if your project uses:
+
+✔ **@tensorflow/tfjs**
+✔ **@tensorflow/tfjs-react-native**
+✔ **expo-camera**
+
+---
+
+## 📦 **1. Required Packages**
+
+Install TensorFlow + React Native TensorFlow bindings:
+
+```sh
+npm install @tensorflow/tfjs @tensorflow/tfjs-react-native
+```
+
+Install required native dependencies:
+
+```sh
+npm install expo-gl expo-gl-cpp
+npm install react-native-unimodules
+```
+
+Install camera + filesystem:
+
+```sh
+npm install expo-camera expo-file-system
+```
+
+---
+
+## 🔧 **2. Required Expo Plugins (Add to app.json)**
+
+```json
+{
+  "expo": {
+    "plugins": [
+      [
+        "@tensorflow/tfjs-react-native",
+        {
+          "cameraTextureWidth": 1080,
+          "cameraTextureHeight": 1920,
+          "resizeWidth": 1080,
+          "resizeHeight": 1920,
+          "rotation": 90
+        }
+      ]
+    ]
+  }
+}
+```
+
+---
+
+## 🛠️ **3. Prebuild Required for TensorFlow**
+
+TensorFlow **will not work in plain Expo Go**.
+
+You **must run prebuild**:
+
+```sh
+npx expo prebuild
+```
+
+If already prebuilt:
+
+```sh
+npx expo prebuild --clean
+```
+
+---
+
+## 📱 **4. Android Build Requirements**
+
+TensorFlow requires:
+
+### ✔ JDK 17
+
+### ✔ Android NDK 25+
+
+### ✔ Gradle 8
+
+### ✔ Android Studio SDK 34+
+
+Install NDK:
+
+1. Open **Android Studio**
+2. Go to **SDK Manager → SDK Tools**
+3. Enable:
+
+* “**NDK (Side by side)**”
+* “**CMake**”
+* “**NDK 25.2 or later**”
+
+---
+
+## 🧪 **5. Initialize TensorFlow on App Start**
+
+Add this to your app entry (App.js or RootLayout):
+
+```js
+import '@tensorflow/tfjs-react-native';
+import * as tf from '@tensorflow/tfjs';
+
+export default function App() {
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    async function loadTF() {
+      await tf.ready();
+      setReady(true);
+    }
+    loadTF();
+  }, []);
+
+  if (!ready) return <Text>Loading TensorFlow...</Text>;
+
+  return <YourApp />;
+}
+```
+
+---
+
+## 🎥 **6. Camera Setup for TensorFlow**
+
+TensorFlow needs **GLView + Camera**:
+
+```sh
+npm install expo-gl expo-camera
+```
+
+Example basic setup:
+
+```js
+import { Camera } from 'expo-camera';
+import { GLView } from 'expo-gl';
+```
+
+---
+
+## ⚠️ Important Notes
+
+### ❌ TensorFlow DOES NOT work in:
+
+* Expo Go app
+* Web preview
+* Snack
+* Older devices without GPU
+
+### ✔ TensorFlow ONLY works in:
+
+* **Expo Dev Client**
+* **EAS Build (Android/iOS)**
+
+Create dev client:
+
+```sh
+npx expo run:android
+```
+
+Or build with EAS:
+
+```sh
+npx eas build --profile development --platform android
+```
+
+---
